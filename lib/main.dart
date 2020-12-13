@@ -72,7 +72,7 @@ class _HomeState extends State<Home> {
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.green, fontSize: 25.0),
                     validator: (value) {
-                      if (value.isEmpty) {
+                      if (value != null && value.isEmpty) {
                         return "Insira seu peso!";
                       }
                       return "";
@@ -88,7 +88,7 @@ class _HomeState extends State<Home> {
                     textAlign: TextAlign.center,
                     style: TextStyle(color: Colors.green, fontSize: 25.0),
                     validator: (value) {
-                      if (value.isEmpty) {
+                      if (value != null && value.isEmpty) {
                         return "Insira sua altura!";
                       }
                       return "";
@@ -100,9 +100,7 @@ class _HomeState extends State<Home> {
                       height: 50.0,
                       child: RaisedButton(
                         onPressed: () {
-                          if (_formKey.currentState.validate()) {
-                            _calculateIMC();
-                          }
+                          if (_formKey.currentState != null) _calculateIMC();
                         },
                         child: Text(
                           "Calcular",
