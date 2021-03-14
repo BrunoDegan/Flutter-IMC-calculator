@@ -98,7 +98,7 @@ class _HomeState extends State<Home> {
                     padding: EdgeInsets.only(top: 10.0, bottom: 10.0),
                     child: Container(
                       height: 50.0,
-                      child: RaisedButton(
+                      child: ElevatedButton(
                         onPressed: () {
                           if (_formKey.currentState != null) _calculateIMC();
                         },
@@ -106,7 +106,9 @@ class _HomeState extends State<Home> {
                           "Calcular",
                           style: TextStyle(color: Colors.white, fontSize: 25.0),
                         ),
-                        color: Colors.green,
+                        style: ButtonStyle(
+                            backgroundColor:
+                                MaterialStateProperty.all<Color>(Colors.green)),
                       ),
                     ),
                   ),
